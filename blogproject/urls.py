@@ -16,8 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from blog.feeds import AllPostRssFeed
-from django.conf import settings
-from django.conf.urls.static import static
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,4 +25,3 @@ urlpatterns = [
     url(r'^all/rss/$', AllPostRssFeed(), name='rss'),
     url(r'^search/', include('haystack.urls')),
 ]
-static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
